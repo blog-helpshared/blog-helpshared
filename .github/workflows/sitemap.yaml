@@ -1,0 +1,17 @@
+name: Generate Sitemap
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  generate_sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Generate the sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: https://blog.helpshared.com
